@@ -1,0 +1,14 @@
+name: Deploy Preview
+on:
+  pull_request:
+    types: [opened, closed, reopened]
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: bakerkretzmar/laravel-deploy-preview@v2.1.2
+        with:
+          forge-token: ${{ secrets.FORGE_TOKEN }}
+          servers: |
+            laravel-deploy-preview.com 729268
