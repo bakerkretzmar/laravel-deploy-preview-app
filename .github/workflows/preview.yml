@@ -10,8 +10,9 @@ jobs:
       pull-requests: write
     steps:
       - uses: actions/checkout@v4
-      - uses: bakerkretzmar/laravel-deploy-preview@v2.1.2
+      - uses: bakerkretzmar/laravel-deploy-preview@v2.2.0
         with:
           forge-token: ${{ secrets.FORGE_TOKEN }}
           servers: |
             laravel-deploy-preview.com 729268
+          environment: DB_CONNECTION=sqlite
